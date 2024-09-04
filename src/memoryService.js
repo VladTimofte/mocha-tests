@@ -6,7 +6,7 @@ export default class MemoryService {
     this.memory = [];
   }
 
-  performOperation(op, a, b) {
+    performOperation(op, a, b) {
     let result;
     switch(op) {
       case 'add':
