@@ -73,3 +73,57 @@ describe("Teste Assert", function () {
     });
   });
 });
+
+describe("Teste should", function () {
+  describe("Numere", function () {
+    //Numere
+    it("ar trebui sa verifice egalitatea celor 2 numere date", function () {
+      (5).should.be.equal(5);
+    });
+    it("ar trebui sa verifice daca un numar este mai mare decat altul", function () {
+      (10).should.be.above(5);
+    });
+    it("ar trebui sa verifice daca un numar este mai mic decat altul", function () {
+      (4).should.be.below(5);
+    });
+  });
+
+  describe("String-uri", function () {
+    //String-uri
+    it("ar trebui sa verifice daca 2 string-uri sunt egale", function () {
+      "salut".should.be.equal("salut");
+    });
+    it("ar trebui sa verifice daca un string contine un anumit substring", function () {
+      "salut, eu sunt Vlad".should.contain("Vlad");
+    });
+    it("ar trebui sa verifice lungimea unui string", function () {
+      "chai".should.have.lengthOf(4);
+    });
+  });
+
+  describe("Obiecte", function () {
+    //Obiecte
+    it("ar trebui sa verifice daca un obiect are o anume proprietate", function () {
+      person.should.have.property("name");
+    });
+    it("ar trebui sa verifice daca un obiect NU are o anume proprietate", function () {
+      person.should.not.have.property("address");
+    });
+    it("ar trebui sa verifice daca doua obiecte sunt egale", function () {
+      person.should.deep.equal({ name: "John", age: 30 });
+    });
+  });
+
+  describe("Array-uri", function () {
+    //Array-uri
+    it("ar trebui sa verifice daca o variabila este un array", function () {
+      numbers.should.be.an("array");
+    });
+    it("ar trebui sa verifice daca array-ul contine o valoare specifica", function () {
+      numbers.should.be.an("array").that.includes(2);
+    });
+    it("ar trebui sa verifice llungimea unui array", function () {
+      numbers.should.have.lengthOf(5);
+    });
+  });
+});
