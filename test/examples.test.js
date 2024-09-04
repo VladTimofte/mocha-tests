@@ -127,3 +127,57 @@ describe("Teste should", function () {
     });
   });
 });
+
+describe("Teste Expect", function () {
+  //Numbere
+  describe("Numere", function () {
+    it("ar trebui sa verifice ca dou numere sunt egale", function () {
+      expect(5).to.equal(5);
+    });
+    it("ar trebui sa verifice ca un numar este mai mare decat altul", function () {
+      expect(10).to.be.above(5);
+    });
+    it("ar trebui sa verifice ca un numar este mai mic decat altul", function () {
+      expect(4).to.be.below(5);
+    });
+  });
+
+  //String-uri
+  describe("Strin-uri", function () {
+    it("ar trebui sa verifice daca 2 string-uri sunt egale", function () {
+      expect("salut").to.equal("salut");
+    });
+    it("ar trebui sa verifice daca un string contine un alt substring", function () {
+      expect("salut, eu sunt Vlad").to.include("Vlad");
+    });
+    it("ar trebui sa verificelungimea unui string", function () {
+      expect("chai").to.have.lengthOf(4);
+    });
+  });
+
+  //Obiecte
+  describe("Obiecte", function () {
+    it("ar trebui sa verifice daca un obiect are o anume proprietate", function () {
+      expect(person).to.have.property("name");
+    });
+    it("ar trebui sa verifice daca un obiect NU are o anume proprietate", function () {
+      expect(person).to.not.have.property("address");
+    });
+    it("ar trebui sa verifice daca doua obiecte sunt egale", function () {
+      expect(person).to.deep.equal({ name: "John", age: 30 });
+    });
+  });
+
+    //Array-uri
+    describe("Array-uri", function () {
+        it("ar trebui sa verifice daca o variabila este un array", function () {
+          expect(numbers).to.be.an("array");
+        });
+        it("ar trebui sa verifice daca array-ul continue o valoare specifica", function () {
+            expect(numbers).to.be.an("array").that.includes(2)
+        });
+        it("ar trebui sa verifice daca primul element din array-ul numbers este 1", function () {
+          expect(numbers[0]).to.equal(1)
+        });
+      });
+});
