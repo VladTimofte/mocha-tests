@@ -1,3 +1,5 @@
+//Teste unitare
+
 import { expect } from "chai";
 import Calculator from "../src/calculator.js";
 
