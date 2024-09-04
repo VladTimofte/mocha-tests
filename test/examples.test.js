@@ -9,3 +9,19 @@ describe("Untest simplu de array", function () {
     assert.equal(numbers.indexOf(9), -1);
   });
 });
+
+// ===== ASSERT ===== //
+describe("Teste Assert", function () {
+  describe("Numbere", function () {
+    //Numbere
+    it("ar trebui sa verifice daca doua numere sunt egale", function () {
+      assert.equal(5, 5, "5 este egal cu 5");
+    });
+    it("ar trebui sa verifice daca un numar este mai mare decat altul", function () {
+        assert.isAbove(10, 5, "10 este mai mare decat 5");
+      });
+      it("ar trebui sa verifice daca un numar este mai mic decat altul", function () {
+        assert.isBelow(4, 5, "4 este mai mic decat 5");
+      });
+  });
+});
