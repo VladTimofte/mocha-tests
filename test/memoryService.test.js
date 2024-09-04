@@ -37,6 +37,17 @@ describe("MemoryService", () => {
       expect(result).to.be.a("number"); // Verifică dacă rezultatul este un număr
     });
 
+    it("ar trebui să returneze exact rezultatele operatiunilor in memorie", function () {
+        const n5 = service.performOperation("divide", 10, 2); //5
+        const n10 = service.performOperation("add", 5, 5); //10
+        const n20 = service.performOperation("multiply", 10, 2); //20
+
+        expect(service.getMemory()).to.deep.equal([n5, n10, n20]); // Verifică dacă memoria conține 5
+        expect(service.getMemory()).to.deep.equal([5, 10, 20]); // Verifică dacă memoria conține 5
+      });
+
+
+
     it("ar trebui sa arunce o eroare pentru operatii invalide", () => {
       expect(() => service.performOperation("qweqweewre", 2, 3)).to.throw(
         "Invalid operation"
